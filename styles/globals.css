@@ -3,6 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-green: hsl(180, 29%, 50%);
+  --neutral-green-50: hsl(180, 52%, 96%);
+  --neutral-gray-400: hsl(180, 8%, 52%);
+  --neutral-green-900: hsl(180, 14%, 20%);
 }
 
 @theme inline {
@@ -20,7 +24,23 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--neutral-green-50);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.neutral-green-50 {
+  background-color: var(--neutral-green-50);
+}
+
+.primary-green {
+  color: var(--primary-green);
+}
+
+.neutral-gray-400 {
+  color: var(--neutral-gray-400);
+}
+
+.neutral-green-900 {
+  color: var(--neutral-green-900);
 }
