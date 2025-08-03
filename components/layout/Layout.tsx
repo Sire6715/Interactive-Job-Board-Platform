@@ -1,11 +1,10 @@
 import Header from "./Header";
 import Footer from "./Footer";
+import{ ReactNodeProps} from "@/interfaces/index";
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+
+const Layout: React.FC<ReactNodeProps> = ({ children }) => {
   return (
     <>
       <Header />
