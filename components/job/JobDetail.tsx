@@ -7,7 +7,7 @@ const JobDetail = () => {
   return (
     <div className="hidden col-span-2 p-10 lg:p-20 mt-4 lg:flex flex-col gap-8 bg-white h-screen scrollbar_hidden overflow-y-scroll">
       <div className="">
-        <div className="flex gap-4 mb-6 bg-white">
+        <div className="flex lg:hidden gap-4 mb-6 bg-white">
           <Image
             src={Icons.back_arrow}
             alt="Back Arrow"
