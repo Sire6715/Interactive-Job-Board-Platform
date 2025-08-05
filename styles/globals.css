@@ -27,6 +27,7 @@ body {
   background: var(--neutral-green-50);
   color: black;
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 
 .neutral-green-50 {

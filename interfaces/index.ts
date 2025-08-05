@@ -1,6 +1,7 @@
 export interface ButtonProps {
   style: string;
   text: string;
+  onClick?: () => void;
 }
 
 export interface ReactNodeProps {
@@ -20,7 +21,7 @@ export interface JobListingProps {
   role_and_responsibility: string;
   education_and_skills: string;
   apply_link: string;
-  posted_date: string; // ISO format (e.g., "2024-07-09T02:21:00")
+  posted_date: string;
 }
 
 export interface StateContextType {
@@ -29,4 +30,23 @@ export interface StateContextType {
   error: string | null;
   noOfJobs: number;
   moreJobs: () => void;
+  jobsToDisplay: JobListingProps[] | null;
+  selectedJob: JobListingProps | null;
+  setSelectedJob: React.Dispatch<React.SetStateAction<JobListingProps | null>>;
+  isMobile: boolean;
+  query: string,
+  setQuery: React.Dispatch<React.SetStateAction<string>>;
+  search: (jobsToDisplay: JobListingProps[]) => JobListingProps[];
+  filteredJobs: JobListingProps[];
+  selectedCategory: string;
+  setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
+  selectedLocation: string;
+  setSelectedLocation: React.Dispatch<React.SetStateAction<string>>;
+  selectedExperience: string;
+  setSelectedExperience: React.Dispatch<React.SetStateAction<string>>
+}
+
+// In JobDetail.tsx
+export interface JobDetailProps {
+  job: JobListingProps | null;
 }

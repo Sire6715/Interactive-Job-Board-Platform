@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import JobListing from "@/components/job/JobListing";
 import JobDetail from "@/components/job/JobDetail";
 import { League_Spartan } from "next/font/google";
+import { useStateContext } from "@/components/context/ContextProvider";
 
 
 const league_spartan = League_Spartan({
@@ -11,12 +12,18 @@ const league_spartan = League_Spartan({
 });
 
 export default function Home() {
+  const { selectedJob, isMobile } = useStateContext();
+   
+
+
   return (
     <div
       className={`${league_spartan.className} font-sans grid grid-cols-1 lg:grid-cols-3`}
     >
       <JobListing />
-      <JobDetail />
+      {!isMobile && selectedJob ? (      
+          <JobDetail job={selectedJob} />
+      ) : null}
     </div>
   );
 }
