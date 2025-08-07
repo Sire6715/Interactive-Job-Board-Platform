@@ -12,15 +12,9 @@ const JobFilters: React.FC = () => {
     selectedExperience,
     setSelectedExperience,
     jobsToDisplay,
-    setQuery
+    clearFilters
   } = useStateContext();
 
-  const clearFilters = () => {
-    setQuery("");
-    setSelectedCategory("");
-    setSelectedLocation("");
-    setSelectedExperience("");
-  };
 
   // Dynamically extract unique values
   const uniqueCategories = [
@@ -34,11 +28,11 @@ const JobFilters: React.FC = () => {
   ];
 
   return (
-    <div className="px-4 w-[95%] sticky z-10 flex scrollbar_hidden overflow-scroll  lg:flex-row gap-4 p-4 bg-white rounded-lg shadow-md mb-4">
+    <div className=" lg:w-[95%] px-0 flex scrollbar_hidden overflow-scroll  lg:flex-row gap-4 p-4 bg-white rounded-lg shadow-md mb-4">
       <select
         value={selectedCategory}
         onChange={(e) => setSelectedCategory(e.target.value)}
-        className="border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-teal-400"
+        className="border border-gray-300 rounded-md px-3 py-2 text-sm max-w-[300px] outline-none focus:ring-2 focus:ring-teal-400"
       >
         <option value="">All Categories</option>
         {uniqueCategories.map((cat) => (
@@ -51,7 +45,7 @@ const JobFilters: React.FC = () => {
       <select
         value={selectedLocation}
         onChange={(e) => setSelectedLocation(e.target.value)}
-        className="border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-teal-400"
+        className="border border-gray-300 rounded-md px-3 py-2 max-w-[300px] text-sm outline-none focus:ring-2 focus:ring-teal-400"
       >
         <option value="">All Locations</option>
         {uniqueLocations.map((loc) => (
@@ -65,7 +59,7 @@ const JobFilters: React.FC = () => {
       <select
         value={selectedExperience}
         onChange={(e) => setSelectedExperience(e.target.value)}
-        className="border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-teal-400"
+        className="border border-gray-300 rounded-md px-3 py-2 text-sm max-w-[300px] outline-none focus:ring-2 focus:ring-teal-400"
       >
         <option value="">All Experience Levels</option>
         {uniqueExperiences.map((exp) => (

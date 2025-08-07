@@ -4,6 +4,7 @@ import JobListing from "@/components/job/JobListing";
 import JobDetail from "@/components/job/JobDetail";
 import { League_Spartan } from "next/font/google";
 import { useStateContext } from "@/components/context/ContextProvider";
+import JobForm from "@/components/job/JobForm";
 
 
 const league_spartan = League_Spartan({
@@ -24,6 +25,7 @@ export default function Home() {
       {!isMobile && selectedJob ? (      
           <JobDetail job={selectedJob} />
       ) : null}
+      {/* <JobForm job={selectedJob} /> */}
     </div>
   );
 }

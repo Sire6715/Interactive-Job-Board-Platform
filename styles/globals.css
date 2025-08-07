@@ -5,7 +5,7 @@
   --foreground: #171717;
   --primary-green: rgb(91, 164, 164);
   --neutral-green-50: hsl(180, 52%, 96%);
-  --neutral-gray-400: hsl(180, 8%, 52%);
+  --neutral-gray-400: rgb(123, 142, 142);
   --neutral-green-900: hsl(180, 14%, 20%);
 }
 
@@ -39,7 +39,6 @@ body {
 }
 
 .neutral-gray-400 {
-
   color: var(--neutral-gray-400);
 }
 
@@ -47,7 +46,64 @@ body {
   background-color: var(--neutral-green-900);
 }
 
-
 .scrollbar_hidden::-webkit-scrollbar {
   display: none;
+}
+
+/* From Uiverse.io by kamehame-ha */
+.coolinput {
+  display: flex;
+  flex-direction: column;
+  position: static;
+}
+
+.coolinput input[type="email"].input,
+.coolinput input[type="text"].input,
+.coolinput input[type="file"].input,
+.coolinput input[type="url"].input,
+.coolinput input[type="email"].input,
+.coolinput input[type="tel"].input {
+  font-size: 1rem;
+  border: 2px #56b8b5 solid;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  padding: 0.5rem;
+}
+
+
+
+.search-input input[type="text"].search {
+  font-size: 1rem;
+  border: 2px #56b8b5 solid;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  padding: 0.5rem;
+}
+.search-input input[type="text"].search:focus {
+  outline: none;
+  border-color: #FFA800;
+}
+
+
+
+.coolinput input[type="email"].input,
+.coolinput input[type="text"].input,
+.coolinput input[type="file"].input,
+.coolinput input[type="url"].input,
+.coolinput input[type="email"].input,
+.coolinput input[type="email"].input,
+.coolinput input[type="tel"].input:focus {
+  outline: none;
+}
+
+.coolinput label.text {
+  font-size: 1rem;
+  color: #56b8b5;
+  font-weight: 700;
+  position: relative;
+  top: 1.7rem;
+  margin: 0 0 0 7px;
+  padding: 0 3px;
+  background: #ffffff;
+  width: fit-content;
 }

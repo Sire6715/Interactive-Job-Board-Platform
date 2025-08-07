@@ -7,6 +7,7 @@ import JobFilters from "./JobFilters";
 const JobListing = () => {
   const { moreJobs, filteredJobs, query } = useStateContext();
   const shouldShowMoreButton = query.length > 0 || filteredJobs.length > 0;
+  
 
   return (
     <div className="flex-col scrollbar_hidden h-screen overflow-x-hidden overflow-y-scroll grid-span-1 w-[100%] gap-2 items-center">

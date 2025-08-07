@@ -3,6 +3,9 @@ import { Image_path, Icons } from "@/constants";
 import Image from "next/image";
 import { League_Spartan } from "next/font/google";
 import { useStateContext } from "@/components/context/ContextProvider";
+import SearchBar from "../common/SearchBar";
+import { useRouter } from "next/router";
+
 
 
 const league_spartan = League_Spartan({
@@ -10,29 +13,19 @@ const league_spartan = League_Spartan({
   subsets: ["latin"],
 });
 
-
 const Header: React.FC = () => {
-  const {jobsToDisplay, setQuery} = useStateContext();
+  const router = useRouter();
+  const { isOpen, isMobile } = useStateContext();
+   const isJobDetailMobile =
+    isMobile && /^\/jobs\/[^/]+$/.test(router.asPath);
 
   return (
     <div
-      className={`${league_spartan.className} h-[100px] lg:h-[200px] w-screen flex justify-center items-center bg-cover bg-center primary-green`}
+      className={`${league_spartan.className} h-[100px] lg:h-[200px] w-screen flex flex-col justify-center items-center bg-cover bg-center primary-green`}
       style={{ backgroundImage: `url(${Image_path.background_Desktop})` }}
     >
-     <input
-     type= "text"
-     placeholder="Search for jobs, companies, or locations"
-     className="w-[70%] p-1 lg:p-2 focus:ring-2 focus:ring-teal-400  bg-white rounded-full border placeholder:text-gray-400 placeholder:text-[15px] border-gray-300"
-     onChange={(e) => setQuery(e.target.value)}
-     />
-     <div className="bg-[#FFA800] cursor-pointer p-1 lg:p-2 rounded-full ml-2">
-       <Image
-         src={Icons.search}
-         alt="Search Icon"
-         height={24}
-         width={24}
-       />
-     </div>
+       <h1 className="font-bold text-white text-[25px] lg:text-[45px]">JobBoard</h1>
+      {!isOpen && !isJobDetailMobile && <SearchBar />}
     </div>
   );
 };

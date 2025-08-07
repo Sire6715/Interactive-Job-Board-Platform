@@ -1,3 +1,5 @@
+import { SetStateAction } from "react";
+
 export interface ButtonProps {
   style: string;
   text: string;
@@ -8,6 +10,14 @@ export interface ReactNodeProps {
   children: React.ReactNode;
 }
 
+export interface JopProps{
+   fullName: string;
+    email: string;
+    phone: string;
+    linkedIn: string;
+    coverLetter: string;
+    resume: File | null;
+}
 export interface JobListingProps {
   id: number;
   title: string;
@@ -43,7 +53,10 @@ export interface StateContextType {
   selectedLocation: string;
   setSelectedLocation: React.Dispatch<React.SetStateAction<string>>;
   selectedExperience: string;
-  setSelectedExperience: React.Dispatch<React.SetStateAction<string>>
+  setSelectedExperience: React.Dispatch<React.SetStateAction<string>>;
+  clearFilters: () => void;
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<SetStateAction<boolean>>;
 }
 
 // In JobDetail.tsx
