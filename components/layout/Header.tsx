@@ -1,6 +1,5 @@
 import React from "react";
-import { Image_path, Icons } from "@/constants";
-import Image from "next/image";
+import { Image_path} from "@/constants";
 import { League_Spartan } from "next/font/google";
 import { useStateContext } from "@/components/context/ContextProvider";
 import SearchBar from "../common/SearchBar";
@@ -16,6 +15,8 @@ const league_spartan = League_Spartan({
 const Header: React.FC = () => {
   const router = useRouter();
   const { isOpen, isMobile } = useStateContext();
+  // Check if the current path is a job detail page on mobile
+  // This is done by checking if the path matches the pattern for job detail pages
    const isJobDetailMobile =
     isMobile && /^\/jobs\/[^/]+$/.test(router.asPath);
 

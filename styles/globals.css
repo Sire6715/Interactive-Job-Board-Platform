@@ -53,8 +53,6 @@ body {
 /* From Uiverse.io by kamehame-ha */
 .coolinput {
   display: flex;
-  flex-direction: column;
-  position: static;
 }
 
 .coolinput input[type="email"].input,

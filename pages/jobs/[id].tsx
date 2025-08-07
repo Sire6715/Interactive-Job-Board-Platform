@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import { useStateContext } from "@/components/context/ContextProvider";
 import JobDetail from "@/components/job/JobDetail";
 import { League_Spartan } from "next/font/google";
-import { JobDetailProps } from "@/interfaces";
 
 const league_spartan = League_Spartan({
   variable: "--font-league-spartan",

@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const JobForm = ({ job }: { job: any }) => {
-  const { isOpen, setIsOpen } = useStateContext();
+  const { setIsOpen } = useStateContext();
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [resumeFile, setResumeFile] = useState<File | null>(null);
 
@@ -21,7 +21,7 @@ const JobForm = ({ job }: { job: any }) => {
     resume: null as File | null,
   });
 
-  console.log(isOpen);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -35,6 +35,8 @@ const JobForm = ({ job }: { job: any }) => {
     }
   };
 
+  // Clear the file input and reset the resume state
+  // This function is called when the user clicks the "Clear" button
   const handleClearFile = () => {
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
@@ -54,7 +56,7 @@ const JobForm = ({ job }: { job: any }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className=" lg:p-20 coolinput mt-4 flex flex-col gap-8 bg-white h-screen  "
+      className=" lg:p-10 coolinput mt-4 flex flex-col gap-8 bg-white h-screen  "
     >
       <div
         className="flex gap-4  bg-white"
@@ -109,13 +111,14 @@ const JobForm = ({ job }: { job: any }) => {
         onChange={handleChange}
         rows={4}
         typeof="text"
-        className="border input p-2 w-full"
+        className="border h-[100px] min-h-[100px] input p-2 w-full"
       />
-      <div className="flex coolinput  gap-4">
-        <label className="text">Upload Resume (pdf,.doc,.docx)</label>
+      <div className="flex   gap-4">
+          
         <input
           ref={fileInputRef}
           name="resume"
+          placeholder="Upload your resume"
           type="file"
           accept=".pdf,.doc,.docx"
           onChange={handleFileChange}

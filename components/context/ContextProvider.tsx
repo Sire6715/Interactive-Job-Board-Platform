@@ -101,7 +101,7 @@ export const ContextProvider: React.FC<ReactNodeProps> = ({ children }) => {
   }, []);
 
   //display first job onMount
-  // This ensures that when the component mounts, the first job is selected by default
+  // This ensures that when the component mounts, the first job is selected by default either from the fetched data or the fallback data
   useEffect(() => {
     if (jobsToDisplay && jobsToDisplay.length > 0) {
       setSelectedJob(jobsToDisplay[0]);
@@ -140,6 +140,8 @@ export const ContextProvider: React.FC<ReactNodeProps> = ({ children }) => {
   );
 };
 
+// Custom hook to use the state context
+// This hook allows components to access the state context without needing to use useContext directly
 export const useStateContext = () => {
   const context = useContext(StateContext);
   if (!context)
