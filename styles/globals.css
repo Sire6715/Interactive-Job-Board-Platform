@@ -4,7 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --primary-green: rgb(91, 164, 164);
-  --neutral-green-50: hsl(180, 52%, 96%);
+  --neutral-green-50: rgb(239, 250, 250);
   --neutral-gray-400: rgb(123, 142, 142);
   --neutral-green-900: hsl(180, 14%, 20%);
 }
@@ -53,8 +53,6 @@ body {
 /* From Uiverse.io by kamehame-ha */
 .coolinput {
   display: flex;
-  flex-direction: column;
-  position: static;
 }
 
 .coolinput input[type="email"].input,

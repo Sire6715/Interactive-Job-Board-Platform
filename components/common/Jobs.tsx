@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import { Icons } from "@/constants";
 import { useStateContext } from "../context/ContextProvider";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -65,6 +63,8 @@ const Jobs: React.FC = () => {
         );
 
         // mobile
+        // If the view is mobile, we use a Link to navigate to the job details page
+        // Otherwise, we render the JobCard directly
         return isMobile ? (
           <Link
             key={job.id}

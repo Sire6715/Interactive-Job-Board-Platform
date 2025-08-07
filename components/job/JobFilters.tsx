@@ -12,9 +12,8 @@ const JobFilters: React.FC = () => {
     selectedExperience,
     setSelectedExperience,
     jobsToDisplay,
-    clearFilters
+    clearFilters,
   } = useStateContext();
-
 
   // Dynamically extract unique values
   const uniqueCategories = [
@@ -32,7 +31,7 @@ const JobFilters: React.FC = () => {
       <select
         value={selectedCategory}
         onChange={(e) => setSelectedCategory(e.target.value)}
-        className="border border-gray-300 rounded-md px-3 py-2 text-sm max-w-[300px] outline-none focus:ring-2 focus:ring-teal-400"
+        className="border border-gray-300 rounded-md px-3 py-2  text-sm max-w-[300px] outline-none focus:ring-2 focus:ring-teal-400"
       >
         <option value="">All Categories</option>
         {uniqueCategories.map((cat) => (
@@ -59,7 +58,7 @@ const JobFilters: React.FC = () => {
       <select
         value={selectedExperience}
         onChange={(e) => setSelectedExperience(e.target.value)}
-        className="border border-gray-300 rounded-md px-3 py-2 text-sm max-w-[300px] outline-none focus:ring-2 focus:ring-teal-400"
+        className="border  border-gray-300 rounded-md px-3 py-2 text-sm max-w-[300px] outline-none focus:ring-2 focus:ring-teal-400"
       >
         <option value="">All Experience Levels</option>
         {uniqueExperiences.map((exp) => (

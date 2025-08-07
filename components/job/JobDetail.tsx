@@ -25,12 +25,12 @@ const JobDetail: React.FC<JobDetailProps> = ({ job }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className={`col-span-2 lg:p-20 mt-4 lg:flex flex-col gap-8 bg-white h-screen scrollbar_hidden overflow-x-hidden overflow-y-scroll`}
+      className={`col-span-2 lg:p-15 mt-4 lg:flex flex-col gap-8 bg-white h-screen scrollbar_hidden overflow-x-hidden overflow-y-scroll`}
     >
       <div>
         <div
           onClick={() => router.back()}
-          className="flex lg:hidden gap-4 mb-6 bg-white"
+          className="flex lg:hidden gap-4 mb-2 bg-white"
         >
           <Image
             src={Icons.back_arrow}
