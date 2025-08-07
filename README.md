@@ -35,7 +35,7 @@ JobBoard is a professional job listing platform built using Next.js, TypeScript,
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/jobboard.git
+git clone https://github.com/sire6715/Interactive-Job-Board-Platform
 cd jobboard
 ```
 
@@ -66,19 +66,18 @@ src/
 │   ├── jobs/           # Job-related components
 │   └── context/        # Context providers
 ├── constants/          # Static paths and icons
+├── interfaces/         # TypeScript interfaces and types
 ├── pages/
 │   ├── index.tsx       # Homepage
 │   └── jobs/[id].tsx   # Job details page
 ├── styles/             # Tailwind configuration and global styles
 ├── utils/              # Helper functions
-├── types/              # TypeScript interfaces and types
 ```
 
 ##  Component Structure
 
 - `components/common`: Reusable UI elements (`SearchBar`, `Button`, `Input`, etc.)
 - `components/Job`: Job card, details, and list rendering
-- `components/Form`: Form fields, validators, file upload logic
 - `context/ContextProvider.tsx`: Global state for search query and mobile view tracking
 - `pages`: Homepage, job details page
 
@@ -121,10 +120,6 @@ export interface JobApplicationProps {
 - Introduce job tags for advanced filtering
 - Add loading skeletons for better UX
 - Develop admin panel for job posting
-
-## License
-
-This project is open-source and available under the MIT License.
 
 ## Contact
 
